@@ -5,4 +5,4 @@ An Awesome Calculator Made in HTML, CSS &amp; JS
 
 **Please Star If You Like it!**
 
-# ***Thank You 😊***
+# ***Thank You*** 😊
