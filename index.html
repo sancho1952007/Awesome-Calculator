@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Calculator</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wixonic/Donut@2.0/Donut.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <donut>
+        <div class="container">
+            <center>
+                <input id='in' class='in' onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            </center>
+            <div class='row'>
+                <button class='btn' onclick="document.getElementById('in').value=''">C</button>
+                <button class='btn' onclick="window.open('https://www.youtube.com/channel/UCA_3t4pPc9GRIFiP86kRD2Q', '_blank');">Youtube!</button>
+                <button class='btn' onclick="bksp()" style="font-size: 15px;">⌫</button>
+            </div>
+
+            <br>
+
+            <div class="row2">
+                <button class='btn' onclick="document.getElementById('in').value+='1'">1</button>
+                <button class='btn' onclick="document.getElementById('in').value+='2'">2</button>
+                <button class='btn' onclick="document.getElementById('in').value+='3'">3</button>
+            </div>
+
+            <br>
+            <div class="row2">
+                <button class='btn' onclick="document.getElementById('in').value+='4'">4</button>
+                <button class='btn' onclick="document.getElementById('in').value+='5'">5</button>
+                <button class='btn' onclick="document.getElementById('in').value+='6'">6</button>
+            </div>
+
+            <br>
+            <div class="row2">
+                <button class='btn' onclick="document.getElementById('in').value+='7'">7</button>
+                <button class='btn' onclick="document.getElementById('in').value+='8'">8</button>
+                <button class='btn' onclick="document.getElementById('in').value+='9'">9</button>
+            </div>
+
+            <br>
+
+            <div class="row2">
+                <button class='btn' onclick="document.getElementById('in').value+='-'">-</button>
+                <button class='btn' onclick="document.getElementById('in').value+='0'">0</button>
+                <button class='btn' onclick="document.getElementById('in').value+='+'">+</button>
+            </div>
+
+            <br>
+
+            <div class="row2">
+                <button class='btn' onclick="document.getElementById('in').value+='*'">x</button>
+                <button class='btn' onclick="document.getElementById('in').value+='/'">/</button>
+                <button class='btn' onclick="calc()">=</button>
+            </div>
+        </div>
+    </donut>
+</body>
+
+<style>
+    .container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid rgb(0, 255, 0);
+        border-radius: 10px;
+        padding: 5px;
+    }
+    .in{
+        font-family: 'Rubik', sans-serif;
+        font-size: 50px;
+        width: 400px;
+    }
+    .in::selection{
+        background-color: white;
+        color: black;
+    }
+    .btn{
+        width: 130px;
+        height: 50px;
+        font-family: 'Arvo', serif;
+    }
+    .row{
+        display: flex;
+    }
+    .row2{
+        display: flex;
+        margin-top: -15px;
+    }
+</style>
+
+<script>
+    function bksp(){
+        var text=document.querySelector('.in');
+        text.value = text.value.substring(0, text.value.length - 1);
+    }
+
+    function calc(){
+        total=eval(document.querySelector('.in').value)
+        document.getElementById('in').value=total
+    }
+</script>
+
+</html>
