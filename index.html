@@ -13,67 +13,63 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <donut>
-        <div class="container">
-            <center>
-                <input id='in' class='in' onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-            </center>
-            <div class='row'>
-                <button class='btn' onclick="document.getElementById('in').value=''">C</button>
-                <button class='btn' onclick="window.open('https://www.youtube.com/channel/UCA_3t4pPc9GRIFiP86kRD2Q', '_blank');">Youtube!</button>
-                <button class='btn' onclick="bksp()" style="font-size: 15px;">⌫</button>
-            </div>
-
-            <br>
-
-            <div class="row2">
-                <button class='btn' onclick="document.getElementById('in').value+='1'">1</button>
-                <button class='btn' onclick="document.getElementById('in').value+='2'">2</button>
-                <button class='btn' onclick="document.getElementById('in').value+='3'">3</button>
-            </div>
-
-            <br>
-            <div class="row2">
-                <button class='btn' onclick="document.getElementById('in').value+='4'">4</button>
-                <button class='btn' onclick="document.getElementById('in').value+='5'">5</button>
-                <button class='btn' onclick="document.getElementById('in').value+='6'">6</button>
-            </div>
-
-            <br>
-            <div class="row2">
-                <button class='btn' onclick="document.getElementById('in').value+='7'">7</button>
-                <button class='btn' onclick="document.getElementById('in').value+='8'">8</button>
-                <button class='btn' onclick="document.getElementById('in').value+='9'">9</button>
-            </div>
-
-            <br>
-
-            <div class="row2">
-                <button class='btn' onclick="document.getElementById('in').value+='-'">-</button>
-                <button class='btn' onclick="document.getElementById('in').value+='0'">0</button>
-                <button class='btn' onclick="document.getElementById('in').value+='+'">+</button>
-            </div>
-
-            <br>
-
-            <div class="row2">
-                <button class='btn' onclick="document.getElementById('in').value+='*'">x</button>
-                <button class='btn' onclick="document.getElementById('in').value+='/'">/</button>
-                <button class='btn' onclick="calc()">=</button>
-            </div>
+    <div class="container">
+        <center>
+            <input id='in' class='in' onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        </center>
+        <div class='row'>
+            <button class='btn' onclick="document.getElementById('in').value=''">C</button>
+            <button class='btn' onclick="window.open('https://www.youtube.com/channel/UCA_3t4pPc9GRIFiP86kRD2Q', '_blank');">Youtube!</button>
+            <button class='btn' onclick="bksp()" style="font-size: 15px;">⌫</button>
         </div>
-    </donut>
+        <br>
+        <div class="row2">
+            <button class='btn' onclick="document.getElementById('in').value+='1'">1</button>
+            <button class='btn' onclick="document.getElementById('in').value+='2'">2</button>
+            <button class='btn' onclick="document.getElementById('in').value+='3'">3</button>
+        </div>
+        <br>
+        <div class="row2">
+            <button class='btn' onclick="document.getElementById('in').value+='4'">4</button>
+            <button class='btn' onclick="document.getElementById('in').value+='5'">5</button>
+            <button class='btn' onclick="document.getElementById('in').value+='6'">6</button>
+        </div>
+        <br>
+        <div class="row2">
+            <button class='btn' onclick="document.getElementById('in').value+='7'">7</button>
+            <button class='btn' onclick="document.getElementById('in').value+='8'">8</button>
+            <button class='btn' onclick="document.getElementById('in').value+='9'">9</button>
+        </div>
+        <br>
+        <div class="row2">
+            <button class='btn' onclick="document.getElementById('in').value+='-'">-</button>
+            <button class='btn' onclick="document.getElementById('in').value+='0'">0</button>
+            <button class='btn' onclick="document.getElementById('in').value+='+'">+</button>
+        </div>
+        <br>
+        <div class="row2">
+            <button class='btn' onclick="document.getElementById('in').value+='*'">x</button>
+            <button class='btn' onclick="document.getElementById('in').value+='/'">/</button>
+            <button class='btn' onclick="calc()">=</button>
+        </div>
+    </div>
 </body>
 
 <style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    }
     .container{
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         border: 1px solid rgb(0, 255, 0);
         border-radius: 10px;
         padding: 5px;
+        background-color: rgb(53, 53, 57);
     }
     .in{
         font-family: 'Rubik', sans-serif;
@@ -90,6 +86,10 @@
         font-family: 'Arvo', serif;
         border-color: black;
         margin-right: 2px;
+        border: 1px solid black;
+    }
+    .btn:hover{
+        border-color: darkgrey;
     }
     .row{
         display: flex;
